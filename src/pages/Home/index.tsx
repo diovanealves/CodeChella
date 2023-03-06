@@ -1,22 +1,22 @@
 import LocalActivity from "@mui/icons-material/LocalActivity";
 
-import Banner from "../../assets/BannerBoreal.svg";
-import BannerLineUp from "../../assets/BannerLineUp.svg";
-import FestivalBanner from "../../assets/FestivalBanner.svg";
+import BannerBoreal from "../../assets/BannerBoreal.png";
+import BannerLineUp from "../../assets/BannerLineUp.png";
+import FestivalBanner from "../../assets/FestivalBanner.png";
 
 import { CardDate } from "../../components/CardDate";
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
-import { SaturdaySingers, SingersSunday } from "../../utils/Singers.json";
+import { SaturdaySingers, SingersSunday } from "../../utils/database.json";
 
 export function Home() {
   return (
-    <div className="bg-background">
+    <div>
       <Navbar />
-      <img src={Banner} alt="" className="w-full " />
+      <img src={BannerBoreal} alt="" className="w-full " />
 
       <div className="flex flex-wrap justify-around items-center mt-16">
-        <img src={FestivalBanner} alt="" className="max-w-xl w-11/12" />
+        <img src={BannerLineUp} alt="" className="max-w-xl w-11/12" />
         <div className="flex flex-col items-center text-center  w-[35rem]">
           <h1 className="text-2xl font-bold">
             &lt; 11 e 12 de Março &gt; <br />
@@ -29,7 +29,7 @@ export function Home() {
           </p>
           <a
             href=""
-            className="h-14 w-64 rounded-2xl bg-backgroundHighlight flex items-center justify-center gap-2"
+            className="h-14 w-64 rounded-2xl bg-backgroundHighlight flex items-center justify-center gap-2 hover:brightness-90"
           >
             Comprar ingresso! <LocalActivity />
           </a>
@@ -66,7 +66,7 @@ export function Home() {
           </div>
         </div>
       </div>
-      <img src={BannerLineUp} alt="" className="w-full " />
+      <img src={FestivalBanner} alt="" className="w-full " />
       <Footer />
     </div>
   );

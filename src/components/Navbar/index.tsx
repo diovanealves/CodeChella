@@ -11,17 +11,17 @@ export function Navbar() {
   }
 
   const Link = [
-    { name: "A experiência", url: "/" },
-    { name: "Mapa de Setores", url: "/" },
+    { name: "A experiência", url: "/experiencia" },
+    { name: "Mapa de Setores", url: "/setores" },
     { name: "Informações", url: "/" },
     { name: "Ingresso", url: "/" },
   ];
 
   return (
     <nav className="bg-backgroundHighlight flex items-center md:flex-col lg:flex-row lg:justify-between py-2 px-4 sm:px-10">
-      <div>
+      <a href="/">
         <img src={Logo} alt="" className="w-full" />
-      </div>
+      </a>
 
       <div className="z-20 fixed right-5 cursor-pointer sm:hidden">
         <Hamburger size={20} toggled={Open} toggle={setOpen} direction="left" />
@@ -36,7 +36,7 @@ export function Navbar() {
           <li className="md:inline-block md:ml-8 ml-5 mr-10 md:mr-0 border-transparent duration-300 ">
             <a
               href={link.url}
-              className="text-base py-2 md:py-5 lg:py-0 inline-block"
+              className="text-base py-2 md:py-5 lg:py-0 inline-block hover:underline"
               onClick={ClickLink}
             >
               {link.name}
