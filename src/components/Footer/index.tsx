@@ -4,7 +4,7 @@ import Logo from "../../assets/Logo.png";
 
 export function Footer() {
   return (
-    <div className="bg-backgroundHighlight flex flex-col items-center lg:flex-row lg:justify-between  py-10 px-12">
+    <div className="bg-Highlight flex flex-col items-center lg:flex-row lg:justify-between  py-10 px-12">
       <div>
         <img src={Logo} alt="" />
         <div className="flex items-center gap-2 py-7 lg:py-0">

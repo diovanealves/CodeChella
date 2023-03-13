@@ -13,12 +13,12 @@ export function Navbar() {
   const Link = [
     { name: "A experiência", url: "/experiencia" },
     { name: "Mapa de Setores", url: "/setores" },
-    { name: "Informações", url: "/" },
+    { name: "Informações", url: "/informacoes" },
     { name: "Ingresso", url: "/" },
   ];
 
   return (
-    <nav className="bg-backgroundHighlight flex items-center md:flex-col lg:flex-row lg:justify-between py-2 px-4 sm:px-10">
+    <nav className="bg-Highlight flex items-center md:flex-col lg:flex-row lg:justify-between py-2 px-4 sm:px-10">
       <a href="/">
         <img src={Logo} alt="" className="w-full" />
       </a>

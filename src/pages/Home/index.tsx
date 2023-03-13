@@ -29,7 +29,7 @@ export function Home() {
           </p>
           <a
             href=""
-            className="h-14 w-64 rounded-2xl bg-backgroundHighlight flex items-center justify-center gap-2 hover:brightness-90"
+            className="h-14 w-64 rounded-2xl bg-Highlight flex items-center justify-center gap-2 hover:brightness-90"
           >
             Comprar ingresso! <LocalActivity />
           </a>

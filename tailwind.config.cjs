@@ -8,8 +8,9 @@ module.exports = {
         sans: "Raleway, sans-serif",
       },
       colors: {
-        backgroundHighlight: "#4650BD",
-        backgroundDate: "#008364",
+        Highlight: "#4650BD",
+        AccordionDescription: "#C8DEEF",
+        Date: "#008364",
       },
       backgroundImage: {
         background:
