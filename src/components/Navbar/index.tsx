@@ -14,7 +14,7 @@ export function Navbar() {
     { name: "A experiência", url: "/experiencia" },
     { name: "Mapa de Setores", url: "/setores" },
     { name: "Informações", url: "/informacoes" },
-    { name: "Ingresso", url: "/" },
+    { name: "Ingresso", url: "/ingresso" },
   ];
 
   return (

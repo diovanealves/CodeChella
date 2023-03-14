@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { Experience } from "../pages/Experience";
 import { SectorMap } from "../pages/SectorMap";
 import { Information } from "../pages/Information";
+import { Ingress } from "../pages/Ingress";
 
 export function Router() {
   return (
@@ -12,6 +13,7 @@ export function Router() {
       <Route path="/experiencia" element={<Experience />} />
       <Route path="/setores" element={<SectorMap />} />
       <Route path="/informacoes" element={<Information />} />
+      <Route path="/ingresso" element={<Ingress />} />
     </Routes>
   );
 }

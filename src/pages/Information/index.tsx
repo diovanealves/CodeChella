@@ -21,7 +21,7 @@ export function Information() {
               Quais serão as atrações?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               Teremos dois dias de shows, o primeiro (11/03) com bandas de rock,
               e o segundo (12/03) com bandas pop.
               <a href="http://localhost:5173/" className="underline ml-1">
@@ -35,7 +35,7 @@ export function Information() {
               Quais serão as atrações?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               Teremos dois dias de shows, o primeiro (11/03) com bandas de rock,
               e o segundo (12/03) com bandas pop.
               <a href="http://localhost:5173/">
@@ -49,7 +49,7 @@ export function Information() {
               Qual é a classificação etária?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               A partir de 16 anos, todo mundo pode entrar. De 13 a 15 anos, tem
               que estar acompanhado dos pais ou responsáveis legais. Menores de
               10 anos não podem entrar
@@ -61,7 +61,7 @@ export function Information() {
               Quais são os setores disponíveis?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               Pista Premium, Pista Comum, Cadeiras térreo, Cadeiras superiores e
               Rampas
             </p>
@@ -72,7 +72,7 @@ export function Information() {
               Quais são os itens proibidos?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               Garrafas, latas, bebidas, utensílios de armazenagem, embalagens
               rígidas com tampa, capacetes, cadeiras ou bancos, armas de fogo e
               armas brancas, objetos pontiagudos, cortantes e/ou perfurantes,
@@ -87,7 +87,7 @@ export function Information() {
               Quem tem direito a meia-entrada?
               <ArrowDropDownIcon />
             </summary>
-            <p className="bg-AccordionDescription text-gray-600 leading-7 p-4">
+            <p className="bg-AccordionDescription text-gray-700 leading-7 p-4">
               De acordo com a Lei Federal, têm direito ao benefício da
               meia-entrada aqueles que preencherem os requisitos e apresentarem
               os documentos comprobatórios.
