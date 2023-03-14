@@ -4,7 +4,7 @@ import BannerGetYourTicket from "../../assets/BannerGetYourTicket.png";
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 
-export function Ingress() {
+export function BuyIngress() {
   return (
     <div>
       <Navbar />
