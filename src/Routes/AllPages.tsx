@@ -14,7 +14,7 @@ export function Router() {
       <Route path="/experiencia" element={<Experience />} />
       <Route path="/setores" element={<SectorMap />} />
       <Route path="/informacoes" element={<Information />} />
-      <Route path="/ingresso" element={<BuyIngress />} />
+      <Route path="/compraringresso" element={<BuyIngress />} />
       <Route path="/ticket" element={<Ticket />} />
     </Routes>
   );
