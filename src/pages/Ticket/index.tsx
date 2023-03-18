@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import BannerTicket from "../../assets/BannerTicket.png";
 import QrCode from "../../assets/QrCode.png";
 import Logo from "../../assets/Logo.png";
@@ -7,8 +8,31 @@ import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 
 export function Ticket() {
-  const searchParams = new URLSearchParams(window.location.search);
-  const data = JSON.parse(decodeURIComponent(searchParams.get("data")));
+  const [nameValue, setNameValue] = useState("");
+  const [ticketValue, setTicketValue] = useState("");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get("data");
+
+  useEffect(() => {
+    if (myParam !== null) {
+      const decodedParam = decodeURIComponent(myParam);
+      const parsedData = JSON.parse(decodedParam);
+
+      if ("name" in parsedData && "selectedTypeTicket" in parsedData) {
+        setNameValue(parsedData.name);
+        setTicketValue(parsedData.selectedTypeTicket);
+      } else if (!parsedData.name) {
+        alert("A propriedade nome não foi encontrado.");
+        window.location.href = "/compraringresso";
+      } else {
+        alert("A tipo de ingresso escolhido não foi encontrado.");
+        window.location.href = "/compraringresso";
+      }
+    } else {
+      window.location.href = "/compraringresso";
+    }
+  });
 
   return (
     <div>
@@ -30,8 +54,8 @@ export function Ticket() {
             <div className="flex flex-col md:flex-row items-center text-center gap-4">
               <img src={QrCode} alt="" />
               <div>
-                <h1 className="text-2xl pb-3">{data.name}</h1>
-                <p>{data.selectedTypeTicket}</p>
+                <h1 className="text-2xl pb-3">{nameValue}</h1>
+                <p>{ticketValue}</p>
                 <p className="p-2">Setor Pista</p>
                 <p>Data: 11/03</p>
                 <p className="pt-2">Local: São Paulo - SP</p>

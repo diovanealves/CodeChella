@@ -32,7 +32,7 @@ export function BuyIngress() {
       const url = `/ticket?data=${encodeURIComponent(JSON.stringify(data))}`;
       window.location.href = url;
     } else {
-      alert("Você não pode entrar no nosso festival");
+      alert("Por ser menor de idade você não pode entrar no festival");
     }
   }
 
