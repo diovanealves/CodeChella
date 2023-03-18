@@ -7,6 +7,9 @@ import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 
 export function Ticket() {
+  const searchParams = new URLSearchParams(window.location.search);
+  const data = JSON.parse(decodeURIComponent(searchParams.get("data")));
+
   return (
     <div>
       <Navbar />
@@ -27,8 +30,8 @@ export function Ticket() {
             <div className="flex flex-col md:flex-row items-center text-center gap-4">
               <img src={QrCode} alt="" />
               <div>
-                <h1 className="text-2xl pb-3">Moni Hillman</h1>
-                <p>Ingresso Costesia</p>
+                <h1 className="text-2xl pb-3">{data.name}</h1>
+                <p>{data.selectedTypeTicket}</p>
                 <p className="p-2">Setor Pista</p>
                 <p>Data: 11/03</p>
                 <p className="pt-2">Local: São Paulo - SP</p>

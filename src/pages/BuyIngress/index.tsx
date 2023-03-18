@@ -1,10 +1,41 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { FormEvent, useState } from "react";
+import { parseISO, differenceInYears } from "date-fns";
+
 import BannerGetYourTicket from "../../assets/BannerGetYourTicket.png";
 
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 
 export function BuyIngress() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedTypeTicket, setSelectedTypeTicket] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+
+  function buttonHandleClick(e: FormEvent) {
+    e.preventDefault();
+
+    const birthdateDate = parseISO(selectedDate);
+    const age = differenceInYears(new Date(), birthdateDate);
+
+    const data = {
+      name,
+      selectedTypeTicket,
+    };
+
+    if (age > 16 && name.length > 12) {
+      const url = `/ticket?data=${encodeURIComponent(JSON.stringify(data))}`;
+      window.location.href = url;
+    } else if (age >= 13 && age <= 15) {
+      alert("Você deve ir acompanhado com seus responsáveis legais.");
+      const url = `/ticket?data=${encodeURIComponent(JSON.stringify(data))}`;
+      window.location.href = url;
+    } else {
+      alert("Você não pode entrar no nosso festival");
+    }
+  }
+
   return (
     <div>
       <Navbar />
@@ -21,6 +52,8 @@ export function BuyIngress() {
             </h1>
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full text-black p-2 mb-3"
               required
             />
@@ -29,7 +62,9 @@ export function BuyIngress() {
           <label>
             <h1 className="text-gray-700 md:text-white text-lg pb-2">Email</h1>
             <input
-              type="text"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full text-black p-2 mb-3"
               required
             />
@@ -43,10 +78,12 @@ export function BuyIngress() {
               <select
                 id="ingress"
                 name="ingress"
+                defaultValue={"Default"}
+                onChange={(e) => setSelectedTypeTicket(e.target.value)}
                 className="w-full text-black p-2 mb-3"
                 required
               >
-                <option value="Tipo de Ingresso" selected disabled>
+                <option value="Default" disabled>
                   Tipo do Ingresso
                 </option>
                 <option value="Inteira">Inteira</option>
@@ -58,11 +95,22 @@ export function BuyIngress() {
               <h1 className="text-gray-700 md:text-white text-lg pb-2">
                 Data de nascimento
               </h1>
-              <input type="date" className="w-full text-black p-2" required />
+              <input
+                type="date"
+                value={selectedDate}
+                onChange={(e) => {
+                  setSelectedDate(e.target.value);
+                }}
+                className="w-full text-black p-2"
+                required
+              />
             </label>
           </div>
 
-          <button className="bg-Highlight h-14 w-40 mx-auto rounded-lg mt-8 flex items-center justify-evenly hover:brightness-90">
+          <button
+            onClick={buttonHandleClick}
+            className="bg-Highlight h-14 w-40 mx-auto rounded-lg mt-8 flex items-center justify-evenly hover:brightness-90"
+          >
             Avançar! <ArrowForwardIcon />
           </button>
         </form>

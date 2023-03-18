@@ -33,7 +33,10 @@ export function Navbar() {
         }`}
       >
         {Link.map((link) => (
-          <li className="md:inline-block md:ml-8 ml-5 mr-10 md:mr-0 border-transparent duration-300 ">
+          <li
+            key={link.url}
+            className="md:inline-block md:ml-8 ml-5 mr-10 md:mr-0 border-transparent duration-300 "
+          >
             <a
               href={link.url}
               className="text-base py-2 md:py-5 lg:py-0 inline-block hover:underline"
