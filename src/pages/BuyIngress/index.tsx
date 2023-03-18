@@ -24,15 +24,27 @@ export function BuyIngress() {
       selectedTypeTicket,
     };
 
-    if (age > 16 && name.length > 12) {
+    if (!name) {
+      alert("Erro: Por favor digite seu nome");
+    } else if (name.length <= 12) {
+      alert("Erro: Insira seu nome completo");
+    } else if (!email) {
+      alert("Erro: Por favor digite seu email");
+    } else if (!selectedTypeTicket) {
+      alert("Erro: Por favor selecione um tipo de ingresso");
+    } else if (!selectedDate) {
+      alert("Erro: Por favor selecione uma data de nascimento");
+    } else if (age > 16 && name.length > 12) {
       const url = `/ticket?data=${encodeURIComponent(JSON.stringify(data))}`;
       window.location.href = url;
     } else if (age >= 13 && age <= 15) {
-      alert("Você deve ir acompanhado com seus responsáveis legais.");
+      alert(
+        "Você poderia ir ao evento acompanhado dos pais ou responsáveis legais."
+      );
       const url = `/ticket?data=${encodeURIComponent(JSON.stringify(data))}`;
       window.location.href = url;
     } else {
-      alert("Por ser menor de idade você não pode entrar no festival");
+      alert("Você não podem entrar no evento.");
     }
   }
 
